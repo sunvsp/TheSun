@@ -11,7 +11,7 @@ exports.cryptPassword = function(password, callback) {
   });
 };
 
-exports.comparePassword = function(plainPass, hashword, callback) {
+exports.comparePassword = function(plainPass, hashword, callback) {   //(passเก่า,passเข้ารหัส)
    bcrypt.compare(plainPass, hashword, function(err, isPasswordMatch) {   
        return err == null ?
            callback(null, isPasswordMatch) :

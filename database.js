@@ -1,13 +1,12 @@
 var mongojs = require('mongojs');
-const express = require('express')
-const app = express()
 var databaseUrl = 'hereGreen_DB';
 var collections = ['users','roles'];
 var bcrypt = require('./security');
 var connect = mongojs(databaseUrl, collections);
-var debug = require('debug');
-exports = {
-    connect: connect
+
+module.exports = {
+    connect: connect ,
+    
 };
 
 bcrypt.cryptPassword('admin',function(err, docs) {
@@ -27,16 +26,13 @@ bcrypt.cryptPassword('admin',function(err, docs) {
             timestamp : new Date()
             
         };
-        connect.users.insert(admin, function(err, docs) {
-            console.log("insert user completed");
-            console.log(admin)
-        });
+        // connect.users.insert(admin, function(err, docs) {
+        //     console.log("insert user completed");
+        // });
     }else{
         console.log("ERROR : Inser User Fail")
     }
-        
-
-        
+                
 })
 
 
