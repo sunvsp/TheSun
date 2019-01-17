@@ -2,11 +2,15 @@ var mongojs = require('mongojs');
 var databaseUrl = 'hereGreen_DB';
 var collections = ['users','roles'];
 var bcrypt = require('./security');
-var connect = mongojs(databaseUrl, collections);
+
+var options = {
+    server: { socketOptions: { connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { connectTimeoutMS: 30000 } }
+  };
+var connect = mongojs(databaseUrl,collections,options);
 
 module.exports = {
     connect: connect ,
-    
 };
 
 bcrypt.cryptPassword('admin',function(err, docs) {
