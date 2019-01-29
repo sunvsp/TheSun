@@ -1,0 +1,28 @@
+{
+  "name": "heregreen",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.2.8",
+    "nodemon": "^1.18.9"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunvsp/hereGreen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunvsp/hereGreen/issues"
+  },
+  "homepage": "https://github.com/sunvsp/hereGreen#readme",
+  "description": ""
+}

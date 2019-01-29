@@ -7,10 +7,8 @@ const routes = require('./routes/routes')
 const databaseUrl = 'mongodb://localhost/heregreen';
 
 mongoose.Promise = global.Promise;
-const connect = mongoose.connect(databaseUrl,{
-    userMongoClient:true
-})
-
+mongoose.connect(databaseUrl,{ useNewUrlParser: true })
+mongoose.set('useCreateIndex', true);
 app.use(bodyPaser.urlencoded({extended:true}))
 app.use(bodyPaser.json());
 routes(app)
