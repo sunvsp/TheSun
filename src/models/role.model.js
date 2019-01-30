@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema =  mongoose.Schema
 
 const roleSchema =  new Schema({
-    roleName: String,
+    roleName: {type:String,unique:true,index:true},
     roleDesc: String
 
 })

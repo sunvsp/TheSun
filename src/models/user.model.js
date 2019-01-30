@@ -12,7 +12,7 @@ const userSchema = new Schema({
     email : String,
     phone : String,
     address : String,
-    roleID : Number,
+    roleID : {type: mongoose.Schema.ObjectId,ref: 'user'},
     timeStamps : Date
 
     

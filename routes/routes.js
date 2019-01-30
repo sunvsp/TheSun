@@ -15,4 +15,8 @@ module.exports = function(app){
 
     //role
     app.post('/role/create',role.create)
+    app.get('/role',role.findAll)
+    app.delete('/role/delete/:id',role.delete)
+    app.post('/role/update',role.update)
+    app.get('/role/id/:id',role.findById)
 }
